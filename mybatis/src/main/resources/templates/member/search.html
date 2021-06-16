@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+		<!-- Begin search -->
+<div  th:fragment="searchFragment">
+			<form th:action="@{/memberList}" method="get">
+			<!--컬럼명을 노출하는방식이다 화면단에서 노출하느것은좋은게 아니다  -->
+			<!-- /memberList?searchKey=m_id&searchValue=id001 으로넘어간다-->
+				<select name="searchKey">
+					<option value="m_id">회원아이디</option>
+					<option value="m_name">회원이름</option>
+					<option value="m_email">회원이메일</option>
+				</select>
+				<input type="text" name="searchValue" placeholder="검색키워드를 입력해주세요">
+				<button type="submit">검색</button>
+			</form>
+			
+			
+	</div>
+		<!-- End search -->
+</html>
